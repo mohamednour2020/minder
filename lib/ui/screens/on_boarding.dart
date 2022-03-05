@@ -1,10 +1,12 @@
-import 'package:easy_onboarding/easy_onboarding.dart';
 import 'package:flutter/material.dart';
+import 'package:minder/consts/colors.dart';
 import 'package:minder/ui/screens/home_screen.dart';
-import 'package:minder/ui/widgets/custom_buuton.dart';
+
+import '../widgets/custom_button.dart';
+import '../widgets/easy_on_boarding.dart';
 
 class OnBoarding extends StatefulWidget {
-  const OnBoarding({Key ?key}) : super(key: key);
+  const OnBoarding({Key? key}) : super(key: key);
 
   @override
   _OnBoardingState createState() => _OnBoardingState();
@@ -21,79 +23,79 @@ class _OnBoardingState extends State<OnBoarding> {
       backButtonColor: Colors.transparent,
       nextButtonColor: Colors.transparent,
       backgroundColor: Colors.white,
-
-      indicatorSelectedColor: Colors.blueAccent,
-      indicatorUnselectedColor: Colors.blueGrey,
+      indicatorSelectedColor: mainColor,
+      indicatorUnselectedColor: mainColor2,
       startButtonColor: Colors.white,
-      nextButtonIcon: Icon(
+      nextButtonIcon: const Icon(
         Icons.arrow_forward,
         color: Colors.white,
       ),
-      skipButtonText: Text(
+      skipButtonText: const Text(
         'SKIP',
         style: TextStyle(fontSize: 15.0, color: Colors.black),
       ),
-      startButtonText:const Text(
+      startButtonText: const Text(
         'Get Started',
         style: TextStyle(
           color: Colors.white,
           fontSize: 15.0,
         ),
       ),
-      backButtonIcon: Icon(
+      backButtonIcon: const Icon(
         Icons.arrow_back,
         color: Colors.white,
       ),
       children: [
-        Container(
-          child: Column(
-            children: [
-              SizedBox(height: 60,),
-              Container(
-
-                child: Image.asset('assets/images/onboarding2.png'),
-                height: 400,
-                width: MediaQuery.of(context).size.width-26,
-              ),
-
-            ],
-          ),
+        Column(
+          children: [
+            SizedBox(
+              height: 60,
+            ),
+            Container(
+              child: Image.asset('assets/images/onboarding2.png'),
+              height: 400,
+              width: MediaQuery.of(context).size.width - 26,
+            ),
+          ],
         ),
-        Container(
-          child: Column(
-            children: [
-              Container(
-
-                child: Image.asset('assets/images/onboarding1.png'),
-                height: 400,
-                width: MediaQuery.of(context).size.width-26,
-              ),
-            ],
-          ),
+        Column(
+          children: [
+            const SizedBox(
+              height: 60,
+            ),
+            SizedBox(
+              child: Image.asset('assets/images/onboarding1.png'),
+              height: 400,
+              width: MediaQuery.of(context).size.width - 26,
+            ),
+          ],
         ),
-        Container(
-          child: Column(
-            children: [
-              Container(
-
-                child: Image.asset('assets/images/onboarding3.png'),
-                height: 400,
-                width: MediaQuery.of(context).size.width-26,
-              ),
-             CustomButton(
-                 'Get Started',
-                     (){ Navigator.push(context, MaterialPageRoute(builder: (builder)=>HomeScreen()));},
-                 MediaQuery.of(context).size.width-26,
-                 40,
-                 16,
-                 textColor: Colors.white,
-
-                 borderRadius: 5,
-             )
-            ],
-          ),
+        Column(
+          children: [
+            const SizedBox(
+              height: 60,
+            ),
+            Container(
+              child: Image.asset('assets/images/onboarding3.png'),
+              height: 400,
+              width: MediaQuery.of(context).size.width - 26,
+            ),
+            const SizedBox(
+              height: 55,
+            ),
+            CustomButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (builder) => HomeScreen()),
+                    (route) => false);
+              },
+              height: 66,
+              borderRadius: 10,
+              text: 'Get started',
+            )
+          ],
         ),
-
       ],
     );
   }
