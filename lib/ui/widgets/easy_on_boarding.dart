@@ -1,6 +1,7 @@
 library easy_onboarding;
 
 import 'package:flutter/material.dart';
+import 'package:minder/ui/screens/home_screen.dart';
 
 class EasyOnboarding extends StatefulWidget {
   final Color backgroundColor;
@@ -76,11 +77,13 @@ class _EasyOnboardingState extends State<EasyOnboarding> {
               child: FlatButton(
                 color: widget.skipButtonColor,
                 onPressed: () {
-                  _pageController.animateToPage(
-                    widget.children.length - 1,
-                    duration: Duration(milliseconds: 100),
-                    curve: Curves.linear,
-                  );
+                  Navigator.pushAndRemoveUntil
+                    (context, MaterialPageRoute(builder: (builder)=>HomeScreen()), (route) => false);
+                  // _pageController.animateToPage(
+                  //   widget.children.length - 1,
+                  //   duration: Duration(milliseconds: 100),
+                  //   curve: Curves.linear,
+                  // );
                 },
                 child: widget.skipButtonText,
               ),
