@@ -1,6 +1,7 @@
 library easy_onboarding;
 
 import 'package:flutter/material.dart';
+import 'package:minder/ui/screens/home_screen.dart';
 
 class EasyOnboarding extends StatefulWidget {
   final Color backgroundColor;
@@ -9,12 +10,12 @@ class EasyOnboarding extends StatefulWidget {
   final Color indicatorUnselectedColor;
   final Color startButtonColor;
   final Color backButtonColor;
-  final Icon backButtonIcon;
+  final Icon? backButtonIcon;
   final Color nextButtonColor;
-  final Icon nextButtonIcon;
-  final Function onStart;
+  final Icon ?nextButtonIcon;
+  final Function ?onStart;
   final Text startButtonText;
-  final List<Widget> children;
+  final List<Widget>? children;
   final Color? skipButtonColor;
   final Text skipButtonText;
 
@@ -26,11 +27,11 @@ class EasyOnboarding extends StatefulWidget {
     this.startButtonColor = Colors.red,
     required this.startButtonText,
     this.backButtonColor = Colors.red,
-    required this.backButtonIcon,
+    this.backButtonIcon,
     this.nextButtonColor = Colors.red,
-    required this.nextButtonIcon,
-    required this.onStart,
-    required this.children,
+     this.nextButtonIcon,
+     this.onStart,
+  this.children,
     this.skipButtonColor,
     required this.skipButtonText,
   });
@@ -68,7 +69,7 @@ class _EasyOnboardingState extends State<EasyOnboarding> {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: widget.backgroundColor,
-          actions: _currentIndex == widget.children.length - 1
+          actions: _currentIndex == widget.children!.length - 1
               ? null
               : [
             Padding(
@@ -76,11 +77,7 @@ class _EasyOnboardingState extends State<EasyOnboarding> {
               child: FlatButton(
                 color: widget.skipButtonColor,
                 onPressed: () {
-                  _pageController.animateToPage(
-                    widget.children.length - 1,
-                    duration: Duration(milliseconds: 100),
-                    curve: Curves.linear,
-                  );
+                 Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder)=>HomeScreen()), (route) => false);
                 },
                 child: widget.skipButtonText,
               ),
@@ -92,7 +89,7 @@ class _EasyOnboardingState extends State<EasyOnboarding> {
           children: [
             PageView(
               controller: _pageController,
-              children: widget.children,
+              children: widget.children!,
               onPageChanged: (val) {
                 setState(() {
                   _currentIndex = val;
@@ -109,7 +106,7 @@ class _EasyOnboardingState extends State<EasyOnboarding> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < widget.children.length; i++)
+                    for (int i = 0; i < widget.children!.length; i++)
                       _currentIndex == i
                           ? pageIndexIndicator(true)
                           : pageIndexIndicator(false)
@@ -119,66 +116,7 @@ class _EasyOnboardingState extends State<EasyOnboarding> {
             )
           ],
         ),
-        bottomSheet: _currentIndex == widget.children.length - 1
-            ? SafeArea(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            child: FlatButton(
-              color: widget.startButtonColor,
-              padding: EdgeInsets.symmetric(
-                vertical: 22.0,
-              ),
-              onPressed: widget.onStart as void Function()?,
-              child: widget.startButtonText,
-            ),
-          ),
-        )
-            : SafeArea(
-          child: Container(
-            color: widget.bottomBackgroundColor,
-            padding:
-            EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    _pageController.animateToPage(
-                      _currentIndex - 1,
-                      duration: Duration(milliseconds: 100),
-                      curve: Curves.linear,
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: widget.backButtonColor,
-                    ),
-                    child: widget.backButtonIcon,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    _pageController.animateToPage(
-                      _currentIndex + 1,
-                      duration: Duration(milliseconds: 100),
-                      curve: Curves.linear,
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: widget.nextButtonColor,
-                    ),
-                    child: widget.nextButtonIcon,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+
       ),
     );
   }
