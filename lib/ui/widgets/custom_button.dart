@@ -12,13 +12,14 @@ class CustomButton extends StatelessWidget {
   double? textSize ;
   BoxDecoration? decoration;
   Color? textColor ;
+  bool fontBold=false;
   bool? loading ;
   Color? background ;
   Border? border ;
   Widget? icon ;
   double? borderRadius;
   BorderRadius? borderRadiusObject ;
-  CustomButton({Key? key, this.borderRadius,this.borderRadiusObject,this.textSize = 16,this.text, this.icon, this.background , this.border,this.onPressed, this.width, this.height ,this.decoration ,this.textColor,this.loading =false }) : super(key: key);
+  CustomButton({Key? key, required this.fontBold,this.borderRadius,this.borderRadiusObject,this.textSize = 16,this.text, this.icon, this.background , this.border,this.onPressed, this.width, this.height ,this.decoration ,this.textColor,this.loading =false }) : super(key: key);
 
 
   @override
@@ -53,6 +54,7 @@ class CustomButton extends StatelessWidget {
                 style: TextStyle(
                   color: textColor??Colors.white ,
                   fontSize: textSize??18 ,
+                  fontWeight: fontBold?FontWeight.bold:null,
                   fontFamily: "DIN-MEDIUM",
                   //fontWeight: FontWeight.bold,
                 ),

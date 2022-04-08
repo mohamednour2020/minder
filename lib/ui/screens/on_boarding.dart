@@ -31,8 +31,8 @@ class _OnBoardingState extends State<OnBoarding> {
         color: Colors.white,
       ),
       skipButtonText: const Text(
-        'SKIP',
-        style: TextStyle(fontSize: 15.0, color: Colors.black),
+        'Skip',
+        style: TextStyle(fontSize: 24.0, color: Colors.black),
       ),
       startButtonText: const Text(
         'Get Started',
@@ -53,7 +53,12 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
             Container(
               child: Image.asset('assets/images/onboarding2.png'),
-              height: 400,
+              height: 250,
+              width: MediaQuery.of(context).size.width - 26,
+            ),
+            Container(
+              child: Image.asset('assets/images/text.png'),
+              height: 100,
               width: MediaQuery.of(context).size.width - 26,
             ),
           ],
@@ -92,7 +97,7 @@ class _OnBoardingState extends State<OnBoarding> {
               },
               height: 66,
               borderRadius: 10,
-              text: 'Get started',
+              text: 'Get started', fontBold: false,
             )
           ],
         ),

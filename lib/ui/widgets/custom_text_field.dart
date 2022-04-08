@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
   String? headLine;
   IconData? icon;
   Widget? iconWidget;
+  Widget? prefixIconWidget;
   Color? labelColor;
   TextInputType? textType;
   Function(String val)? onChange;
@@ -26,6 +27,7 @@ class CustomTextField extends StatelessWidget {
       {this.controller,
         this.hint = "",
         this.width,
+        this.prefixIconWidget,
         this.height,
         this.obscure = false,
         this.label,
@@ -82,6 +84,7 @@ class CustomTextField extends StatelessWidget {
                 onChanged: onChange,
                 obscureText: obscure,
                 decoration: InputDecoration(
+                  labelText:hint??'' ,
                     hintText: hint ?? "",
                     hintStyle:hintStyle?? const TextStyle(fontSize: 12, color: Colors.grey,),
                     // labelText: label,
@@ -99,6 +102,7 @@ class CustomTextField extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       borderSide: const BorderSide(color: mainColor),
                     ),
+                    prefixIcon: prefixIconWidget??null,
                     suffixIcon: iconWidget == null
                         ? (icon == null
                         ? null

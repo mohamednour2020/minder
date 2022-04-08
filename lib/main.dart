@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:minder/consts/colors.dart';
 import 'package:minder/ui/screens/home_screen.dart';
 import 'package:minder/ui/screens/on_boarding.dart';
 
@@ -17,16 +18,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       home: AnimatedSplashScreen(
-        splashIconSize: 180,
+        splashIconSize: 200,
         duration: 2000,
         splash: Image.asset('assets/images/logo.png'),
         nextScreen: OnBoarding(),
-        animationDuration: Duration(seconds: 1),
+        animationDuration: Duration(seconds:1),
         backgroundColor: Colors.white,
-        splashTransition: SplashTransition.sizeTransition,
+        splashTransition: SplashTransition.scaleTransition,
       ),
     );
   }
