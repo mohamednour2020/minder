@@ -81,32 +81,31 @@ class _DoctorLoginState extends State<DoctorLogin> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 13),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [Expanded(
-                child: Card(
+                child: CustomButton(
+                  width: MediaQuery.of(context).size.width/2-50,
+                  borderRadius: 10,
+                  background: const Color.fromRGBO(229, 229, 229, 1) ,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color:const  Color.fromRGBO(60, 90, 154, 1) ,),
+                  fontBold: false,
+                  icon:Image.asset('assets/images/facebook.png',height: 25,),
+                  text: 'Facebook',
 
+                ),
+
+              ),
+              const  SizedBox(width: 25,),
+                Expanded(
                   child: CustomButton(
+                    width: MediaQuery.of(context).size.width/2-50,
                     borderRadius: 10,
                     background: const Color.fromRGBO(229, 229, 229, 1) ,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color:const  Color.fromRGBO(60, 90, 154, 1) ,),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: const Color.fromRGBO(229, 229, 229, 1) ,),
                     fontBold: false,
-                    icon:Image.asset('assets/images/facebook.png',height: 30,),
-                    text: 'Facebook',
-
-                  ),
-                ),
-              ),
-                Expanded(
-                  child: Card(
-
-                    child: CustomButton(
-                      borderRadius: 10,
-                      background: const Color.fromRGBO(229, 229, 229, 1) ,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: const Color.fromRGBO(229, 229, 229, 1) ,),
-                      fontBold: false,
-                      icon: Image.asset('assets/images/google.png',height: 30,),
-                      text: ' Google',
-                      textColor: Colors.black,
-                    ),
+                    icon: Image.asset('assets/images/google.png',height: 25,),
+                    text: ' Google',
+                    textColor: Colors.black,
                   ),
                 ),
 

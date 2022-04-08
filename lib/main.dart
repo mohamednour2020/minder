@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splashIconSize: 200,
         duration: 2000,
-        splash: Image.asset('assets/images/logo.png'),
+        splash: Image.asset('assets/images/1.png'),
         nextScreen: OnBoarding(),
-        animationDuration: Duration(seconds:1),
+        animationDuration: Duration(seconds:2),
         backgroundColor: Colors.white,
-        splashTransition: SplashTransition.scaleTransition,
+        splashTransition: SplashTransition.rotationTransition,
       ),
     );
   }

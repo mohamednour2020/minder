@@ -75,10 +75,10 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
           ],
         ),
-        Column(
+        Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const SizedBox(
-              height: 60,
+              height: 2,
             ),
             Container(
               child: Image.asset('assets/images/onboarding3.png'),
