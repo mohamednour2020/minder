@@ -54,6 +54,7 @@ class CustomTextField extends StatelessWidget {
         height: 77,
         child: Column(
           children: [
+            headLine==""?const SizedBox():
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -75,6 +76,7 @@ class CustomTextField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: TextField(
+                onTap: onPressed,
                 minLines: minLines??1,
                 maxLines: maxLines??1,
                 enabled: enabled,

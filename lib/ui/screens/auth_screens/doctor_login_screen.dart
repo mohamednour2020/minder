@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:minder/consts/colors.dart';
 import 'package:minder/ui/widgets/custom_button.dart';
 import 'package:minder/ui/widgets/custom_text_field.dart';
+
+import 'doctor_signup_screen.dart';
 class DoctorLogin extends StatefulWidget {
   const DoctorLogin({Key? key}) : super(key: key);
 
@@ -35,11 +37,14 @@ class _DoctorLoginState extends State<DoctorLogin> {
          ),
            Padding(
              padding: const EdgeInsets.symmetric(horizontal: 16),
-             child: CustomTextField(hint: 'Email',prefixIconWidget:const Icon(Icons.email),),
+             child: CustomTextField(height: 53,
+
+               hint: 'Email',prefixIconWidget:const Icon(Icons.email),),
            ),
            Padding(
              padding: const EdgeInsets.symmetric(horizontal: 16),
              child: CustomTextField(
+               height: 53,
                iconWidget:const Icon(Icons.visibility),
                iconPressed: (){
                  setState(() {
@@ -67,7 +72,7 @@ class _DoctorLoginState extends State<DoctorLogin> {
           CustomButton(
             width: MediaQuery.of(context).size.width-32,
 
-            height: 66,
+            height: 56,
             text: 'Log in',
             textSize: 20,
             onPressed: (){}, fontBold: true,
@@ -75,7 +80,9 @@ class _DoctorLoginState extends State<DoctorLogin> {
           Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
              const Text('New Member ?',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-              TextButton(onPressed: (){}, child:const Text('Sign Up',style: TextStyle(fontSize: 15,color: mainColor2,fontWeight: FontWeight.bold),))
+              TextButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (builder)=>DoctorSignUp()));
+              }, child:const Text('Sign Up',style: TextStyle(fontSize: 15,color: mainColor2,fontWeight: FontWeight.bold),))
             ],
           ),
           Padding(
@@ -84,6 +91,7 @@ class _DoctorLoginState extends State<DoctorLogin> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [Expanded(
                 child: CustomButton(
+                  height: 56,
                   width: MediaQuery.of(context).size.width/2-50,
                   borderRadius: 10,
                   background: const Color.fromRGBO(229, 229, 229, 1) ,
@@ -98,6 +106,7 @@ class _DoctorLoginState extends State<DoctorLogin> {
               const  SizedBox(width: 25,),
                 Expanded(
                   child: CustomButton(
+                    height: 56,
                     width: MediaQuery.of(context).size.width/2-50,
                     borderRadius: 10,
                     background: const Color.fromRGBO(229, 229, 229, 1) ,
