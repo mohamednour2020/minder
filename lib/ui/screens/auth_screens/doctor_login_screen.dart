@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:minder/consts/colors.dart';
+import 'package:minder/ui/screens/auth_screens/forget_pass_for_doctor_screen.dart';
 import 'package:minder/ui/widgets/custom_button.dart';
 import 'package:minder/ui/widgets/custom_text_field.dart';
 
@@ -66,7 +67,9 @@ class _DoctorLoginState extends State<DoctorLogin> {
 
                Padding(
                  padding:const EdgeInsets.only(right: 9,),
-                 child: TextButton(onPressed: (){}, child:const Text('Forget Password ?',style: TextStyle(fontSize: 16,color: Color.fromRGBO(56, 56, 56, 1)),),)
+                 child: TextButton(onPressed: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (builder)=>ForgetPassForDoctor()));
+                 }, child:const Text('Forget Password ?',style: TextStyle(fontSize: 16,color: Color.fromRGBO(56, 56, 56, 1)),),)
                ),
           ],),
           CustomButton(

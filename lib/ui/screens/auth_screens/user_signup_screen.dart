@@ -77,6 +77,105 @@ class _UserSignupState extends State<UserSignup> {
 
          ),
         const  SizedBox(height: 16,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width/2-15,
+                    height: 56.0,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1,color: ismale == true?const Color.fromRGBO(255, 137, 156, 1):Colors.grey ),
+                      color: ismale == true
+                          ?const Color.fromRGBO(255, 137, 156, 1)
+                          :const Color.fromRGBO(246, 246, 246, 1),
+                      borderRadius: BorderRadius.circular(15.0),
+
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          Image.asset( ismale == true?
+                          'assets/images/male2.png':'assets/images/female.png',width: 25,height: 25,),
+                          const  SizedBox(
+                            width: 11,
+                          ),
+                          Text(
+                            'Female',
+                            style: TextStyle(
+                                color: ismale == true
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    setState(() {
+                      ismale = true;
+                    });
+                  },
+                ),
+                const  SizedBox(
+                  width: 15.0,
+                ),
+                GestureDetector(
+                  child: Container(
+                    width:  MediaQuery.of(context).size.width/2-15,
+                    height: 56.0,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1,color: ismale == false?const Color.fromRGBO(34, 67, 112, 1):Colors.grey ),
+                      color: ismale == false
+                          ?const Color.fromRGBO(34, 67, 112, 1)
+                          :const Color.fromRGBO(246, 246, 246, 1),
+                      borderRadius: BorderRadius.circular(15.0),
+
+
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset( ismale == true?
+                          'assets/images/female2.png':'assets/images/male.png',width: 25,height: 25,),
+
+                          const SizedBox(
+                            width: 11,
+                          ),
+                          Text(
+                            'Male',
+                            style: TextStyle(
+                                color: ismale == false
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    setState(() {
+                      ismale = false;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ),
+        const  SizedBox(height: 16,),
 
 
           CustomButton(
@@ -86,6 +185,8 @@ class _UserSignupState extends State<UserSignup> {
             text: 'Sign Up',
             textSize: 20,
             onPressed: (){
+
+
               globalAlertDialogue(context,img: 'assets/images/warning.png',msg:'You are under age, as you should be '
                   '> 16 to be able to create an account' );
             }, fontBold: true,
@@ -98,99 +199,7 @@ class _UserSignupState extends State<UserSignup> {
               }, child:const Text('Login',style: TextStyle(fontSize: 15,color: mainColor2,fontWeight: FontWeight.bold),))
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                child: Container(
-                  width: MediaQuery.of(context).size.width/2-15,
-                  height: 66.0,
-                  decoration: BoxDecoration(
-                    color: ismale == true
-                        ?const Color.fromRGBO(255, 137, 156, 1)
-                        :const Color.fromRGBO(246, 246, 246, 1),
-                    borderRadius: BorderRadius.circular(15.0),
-                   
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
 
-                        Image.asset( ismale == true?
-                          'assets/images/male2.png':'assets/images/female.png',width: 25,height: 25,),
-                        const  SizedBox(
-                         width: 11,
-                        ),
-                        Text(
-                          'Female',
-                          style: TextStyle(
-                              color: ismale == true
-                                  ? Colors.white
-                                  : Colors.black,
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20.0),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    ismale = true;
-                  });
-                },
-              ),
-              const  SizedBox(
-                width: 15.0,
-              ),
-              GestureDetector(
-                child: Container(
-                  width:  MediaQuery.of(context).size.width/2-15,
-                  height: 66.0,
-                  decoration: BoxDecoration(
-                    color: ismale == false
-                        ?const Color.fromRGBO(34, 67, 112, 1)
-                        :const Color.fromRGBO(246, 246, 246, 1),
-                    borderRadius: BorderRadius.circular(15.0),
-
-
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset( ismale == true?
-                        'assets/images/female2.png':'assets/images/male.png',width: 25,height: 25,),
-
-                        const SizedBox(
-                         width: 11,
-                        ),
-                        Text(
-                          'Male',
-                          style: TextStyle(
-                              color: ismale == false
-                                  ? Colors.white
-                                  : Colors.black,
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20.0),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                onTap: () {
-                  setState(() {
-                    ismale = false;
-                  });
-                },
-              ),
-            ],
-          ),
 
         ],
 
