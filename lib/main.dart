@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:minder/consts/colors.dart';
+import 'package:minder/ui/screens/auth_screens/user/chatbot.dart';
 import 'package:minder/ui/screens/home_screen.dart';
 import 'package:minder/ui/screens/on_boarding.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         splashIconSize: 200,
         duration: 2000,
         splash: Image.asset('assets/images/1.png'),
-        nextScreen: OnBoarding(),
+        nextScreen: Chat(),
         animationDuration: Duration(seconds:2),
         backgroundColor: Colors.white,
         splashTransition: SplashTransition.rotationTransition,

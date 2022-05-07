@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:minder/ui/screens/auth_screens/user_signup_screen.dart';
+import 'package:minder/ui/screens/auth_screens/user/user_signup_screen.dart';
 
-import '../../../consts/colors.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text_field.dart';
-import 'doctor_signup_screen.dart';
+import '../../../../consts/colors.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_text_field.dart';
+import '../doctor/doctor_signup_screen.dart';
+import 'forget_pass_user.dart';
 class UserLogin extends StatefulWidget {
   const UserLogin({Key? key}) : super(key: key);
 
@@ -65,7 +66,9 @@ class _UserLoginState extends State<UserLogin> {
 
               Padding(
                   padding:const EdgeInsets.only(right: 9,),
-                  child: TextButton(onPressed: (){}, child:const Text('Forget Password ?',style: TextStyle(fontSize: 16,color: Color.fromRGBO(56, 56, 56, 1)),),)
+                  child: TextButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (builder)=>ForgetPassUser()));
+                  }, child:const Text('Forget Password ?',style: TextStyle(fontSize: 16,color: Color.fromRGBO(56, 56, 56, 1)),),)
               ),
             ],),
           CustomButton(

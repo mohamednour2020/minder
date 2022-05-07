@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:minder/consts/colors.dart';
-import 'package:minder/ui/screens/auth_screens/user_login.dart';
+import 'package:minder/ui/screens/auth_screens/user/user_login.dart';
 import 'package:minder/ui/widgets/custom_app_bar.dart';
 
-import 'auth_screens/doctor_login_screen.dart';
+import 'auth_screens/doctor/doctor_login_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 

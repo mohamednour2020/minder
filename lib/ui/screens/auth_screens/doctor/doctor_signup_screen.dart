@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../consts/colors.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text_field.dart';
+import '../../../../consts/colors.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_text_field.dart';
 class DoctorSignUp extends StatefulWidget {
   const DoctorSignUp({Key? key}) : super(key: key);
 

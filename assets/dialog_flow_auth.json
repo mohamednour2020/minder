@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "minder-fems",
+  "private_key_id": "aee62280dc3d44a365c9d5865f0e827e7551804d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAumc8wgwNtv+z\nT7s83UEISIGUY013nYFe3iA6Qqv+koP5cdv+4te7OmHhByv2zyEBkjGuGxFVmzu8\nQMj5jPxOeW47wtBM0NjaeMTBSH3qKj8lscMretA0ILMfOjMJ2Ka5glan/en1Q+Qr\nbxRugfPeAbzAg9jiygbJGegiSdCyxEE6s8NnhFDS4FnWQLka5kBn1Wb998iwE7Ut\nT6l2KbcIfmHp9jh5D8Tpu5rapliSssW3QYjUzwKgnUNumaY2rlQdK9zXwGv3JfjV\nO0v5b4q1PCy1KswIexOFdGXHAO0EbgzXoxj8C5EBj84RrsGsdicLtAB6mHP/sUUT\nuVu545SvAgMBAAECggEAEy5aGPttDK5iW3u7dE7G6qagst6BNr7nwcPUrEe3a3I0\njU5uKTt1Yg5o8Gbw0rMBo3Dj3eKWwpDdDJrcBa4o7Dx8opj8dzCv7Gpplpz63yPO\nPhenh3vFHfMFML3vl3LHAR5+NmD4eG8F1ebLv0XSug0tNnHI06VssHYSGtuC2E+w\ntUZ87FqA0GuE74F+GIjRChkR2HkhOtdDUmGnGcT0Gn/Av1UckOe0IWRhKEwSZKeZ\nlkDgeAEskj3HPqdxyNt7eDo6zdeQmtZet2LrXViUGh1eqI2i/kK0Rc6D6yoZnwkR\nr0TUAclRrqSIqG+bVNh+mL8R2RDiWXwy/GyPuUl+bQKBgQDotkJu2qJDalTIBbqV\nuKm6unY5KyB8/NXZzy6A0OE0lw2CUr/h3iKe4kHkaDy2pUyhKUTZNGy2XdmqX7j+\nAm6jgBAYNLpldCqeg/Bsrb6noTGxpE28+4XfVi+q57CdmaXM3XRvv1/j+7alvKon\nmq4iR00/D10aikFbG6aXPRxaawKBgQDUA9Eb66vw/svEP4q58N6s7el+a1LIsGBy\nw5uxr4tvBFC9FnFQRA7rs6jKJJLHAi51fcdbnoOY9Mhd/cwDvW6tbSN/tpMWaUZf\n64jlIiD2wQLlHnijl3B2l9Xh9P93WO+qqWhnoNIU/ooeTiOZDQT5ZS1ozzqCSFaj\njUuTBTLHzQKBgQDPCD9IIiiT84hjv30E8JnH71V4fN7Vc5bJxSGpJqwEvpIdLINb\nbeW9FqvqibXiBGONSYrf9lz1Tb91bN3G1eEagrdO4bImyleUWOtPtK9WsPjmArfK\ndrbeP+3+jUu6mlRAU5DgThEAYhNXleaHf3yGMIsPnBqHnxKP/KSUDqEn6wKBgDSy\n5i1MfSagDsIvESp6xr6xPFKiFqevv6mHGZInEj98ER2PEIdlA1hvBcuJH7q7vhSS\nORV65zcD0TIbvbRIR9Rvxl0eYp01ebqp7xMVUqBDBZcx5ca0A85Wm2FY5o8h2iDP\njxYDEXUKeAZkYdDPPadIEOt2ZxKvLGnm2xwmNKMZAoGBAK9h/W+9ETGcR37sIF6i\npM71u+dTdGJdtX6YzQx7zDvWiJLOvZU0ctHP/DGQUV/n5kHg+23j9djT2aAbjAcU\nPEQ9DIqFJSGhkcDmyapZM5EFCNR24z0Nr7EHwZvfHzj+5apnSRMlVk3EnxiLAkRy\n4Ns6geS6gRgJhNsbfNESczEz\n-----END PRIVATE KEY-----\n",
+  "client_email": "minder-156@minder-fems.iam.gserviceaccount.com",
+  "client_id": "115727471790710682918",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/minder-156%40minder-fems.iam.gserviceaccount.com"
+}
