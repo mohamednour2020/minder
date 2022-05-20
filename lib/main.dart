@@ -1,12 +1,63 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:minder/consts/colors.dart';
 import 'package:minder/ui/screens/auth_screens/user/chatbot.dart';
+import 'package:minder/ui/screens/auth_screens/user/user_login.dart';
 import 'package:minder/ui/screens/home_screen.dart';
 import 'package:minder/ui/screens/on_boarding.dart';
 
+import 'data/cubit/login_cubit/login_cubit.dart';
+
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  runApp(MultiBlocProvider(
+      providers: [
+        BlocProvider<UserLoginCubit>(
+          create: (BuildContext context) => UserLoginCubit(),
+        ),
+        // BlocProvider<UserRegisterCubit>(
+        //   create: (BuildContext context) => UserRegisterCubit(),
+        // ),
+        // BlocProvider<UserHomeCubit>(
+        //   create: (BuildContext context) => UserHomeCubit(),
+        // ),
+        // BlocProvider<UserOrderCubit>(
+        //   create: (BuildContext context) => UserOrderCubit(),
+        // ),
+        // BlocProvider<UserProfileCubit>(
+        //   create: (BuildContext context) => UserProfileCubit(),
+        // ),
+        // BlocProvider<UserCreateOrderCubit>(
+        //   create: (BuildContext context) => UserCreateOrderCubit(),
+        // ),
+        // BlocProvider<ObserverLoginCubit>(
+        //   create: (BuildContext context) => ObserverLoginCubit(),
+        // ),
+        // BlocProvider<ObserverHomeCubit>(
+        //   create: (BuildContext context) => ObserverHomeCubit(),
+        // ),
+        // BlocProvider<ObserverOrderDetailsCubit>(
+        //   create: (BuildContext context) => ObserverOrderDetailsCubit(),
+        // ),
+        // BlocProvider<SettingsCubit>(
+        //   create: (BuildContext context) => SettingsCubit(),
+        // ),
+        // BlocProvider<CreateOrderCubit>(
+        //   create: (BuildContext context) => CreateOrderCubit(),
+        // ),
+        // BlocProvider<LoginCubit>(
+        //   create: (BuildContext context) => LoginCubit(),
+        // ),
+        // BlocProvider<ProfileCubit>(
+        //   create: (BuildContext context) => ProfileCubit(),
+        // ),
+      ],
+      child:  MyApp()
+  ),);
 }
 
 class MyApp extends StatelessWidget {
@@ -25,7 +76,7 @@ class MyApp extends StatelessWidget {
         splashIconSize: 200,
         duration: 2000,
         splash: Image.asset('assets/images/1.png'),
-        nextScreen: Chat(),
+        nextScreen: UserLogin(),
         animationDuration: Duration(seconds:2),
         backgroundColor: Colors.white,
         splashTransition: SplashTransition.rotationTransition,

@@ -39,6 +39,9 @@ dependencies:
   dialog_flowtter: ^0.3.1
   dialogflow_grpc: ^0.2.9
   rxdart: ^0.27.1
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+  shared_preferences: ^2.0.12
 
 dev_dependencies:
   flutter_test:
