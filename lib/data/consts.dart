@@ -31,9 +31,8 @@ const String OBSERVER_ACCEPT_REQUEST = BASE_URL+'api/observer/requests';
 
 //Static Headers
 const Map<String, String> apiHeaders = {
-  "Content-Type": "application/json",
+  "Content-Type":"application/json",
   "Accept": "application/json, text/plain, */*",
-  "X-Requested-With": "XMLHttpRequest",
 };
 
 

@@ -32,7 +32,8 @@ class _UserLoginState extends State<UserLogin> {
       ),
       body: BlocConsumer<UserLoginCubit, UserLoginState>(
   listener: (context, state) {
-    state is LoginError?globalAlertDialogue(context,msg: state.error):state is LoginLoaded?Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder)=>Chat()), (route) => false):null;
+    state is LoginError?globalAlertDialogue(context,msg: state.error):
+    state is LoginUserSignedIn?Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (builder)=>Chat()), (route) => false):null;
   },
   builder: (context, state) {
     return SingleChildScrollView(

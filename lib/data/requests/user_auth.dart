@@ -24,7 +24,7 @@ class UserAuthRequests{
           getUri(USER_LOGIN),
           headers: headers,
           body: json.encode({
-            "user_name": userName,
+            "username": userName,
             "password": password,
           })
       ).then((response) async{
